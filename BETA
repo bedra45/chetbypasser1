@@ -1,0 +1,90 @@
+local Material = loadstring(game:HttpGet("https://raw.githubusercontent.com/Kinlei/MaterialLua/master/Module.lua"))()
+function c(s)
+game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest:FireServer(s,"All")
+wait(0.001)
+local CloneFunction = clonefunction
+local CheckCaller = CloneFunction(checkcaller)
+local HookFunction = CloneFunction(hookfunction)
+local LocalPlayer = game.Players.PlayerAdded:wait()
+
+local PostMessage = require(LocalPlayer:WaitForChild("PlayerScripts", 1/0):WaitForChild("ChatScript", 1/0):WaitForChild("ChatMain", 1/0)).MessagePosted
+getgenv().MessageEvent = Instance.new("BindableEvent")
+
+local OldFunctionHook
+local PostMessageHook = function(self, msg)
+    if not CheckCaller() and self == PostMessage then
+        MessageEvent:Fire(msg)
+        return
+    end
+    return OldFunctionHook(self, msg)
+end
+OldFunctionHook = HookFunction(PostMessage.fire, PostMessageHook)
+end
+local UI = Material.Load({
+     Title = "Chetbypasser Beta 0.0.1",
+     Style = 3,
+     SizeX = 279,
+     SizeY = 189,
+     Theme = "Dark"
+})
+local main = UI.New({
+    Title = "Main"
+})
+local Mainwords = {}
+Mainwords["Fuck Word"] = {"fuck", "fu󠀕󠀖󠀗󠀘󠀕󠀖󠀗󠀘󠀕󠀖󠀗󠀘󠀕󠀖󠀗󠀘󠀕󠀖󠀗󠀘󠀕󠀖󠀗󠀘󠀕󠀖󠀗󠀘󠀕󠀖󠀗󠀕ck"}
+Mainwords["Bitch"] = {"bitch", "bi󠀕󠀖󠀗󠀘󠀕󠀖󠀗󠀘󠀕󠀖󠀗󠀘󠀕󠀖󠀗󠀘󠀕󠀖󠀗󠀘󠀕󠀖󠀗󠀘󠀕󠀖󠀗󠀘󠀕󠀖󠀗󠀕tc󠀕󠀖󠀗󠀘󠀕󠀖󠀗󠀘󠀕󠀖󠀗󠀘󠀕󠀖󠀗󠀘󠀕󠀖󠀗󠀘󠀕󠀖󠀗󠀘󠀕󠀖󠀗󠀘󠀕󠀖󠀗󠀕h"}
+Mainwords["Cunt"] = {"cunt", "cu󠀕󠀖󠀗󠀘󠀕󠀖󠀗󠀘󠀕󠀖󠀗󠀘󠀕󠀖󠀗󠀘󠀕󠀖󠀗󠀘󠀕󠀖󠀗󠀘󠀕󠀖󠀗󠀘󠀕󠀖󠀗󠀕nt"}
+Mainwords["Shit"] = {"shit", "sh󠀕󠀖󠀗󠀘󠀕󠀖󠀗󠀘󠀕󠀖󠀗󠀘󠀕󠀖󠀗󠀘󠀕󠀖󠀗󠀘󠀕󠀖󠀗󠀘󠀕󠀖󠀗󠀘󠀕󠀖󠀗󠀕it"}
+Mainwords["dumbass"] = {"dumbass", "dum󠀕󠀖󠀗󠀘󠀕󠀖󠀗󠀘󠀕󠀖󠀗󠀘󠀕󠀖󠀗󠀘󠀕󠀖󠀗󠀘󠀕󠀖󠀗󠀘󠀕󠀖󠀗󠀘󠀕󠀖󠀗󠀕ba󠀕󠀖󠀗󠀘󠀕󠀖󠀗󠀘󠀕󠀖󠀗󠀘󠀕󠀖󠀗󠀘󠀕󠀖󠀗󠀘󠀕󠀖󠀗󠀘󠀕󠀖󠀗󠀘󠀕󠀖󠀗󠀕ss"}
+Mainwords["twat"] = {"twat", "tw󠀕󠀖󠀗󠀘󠀕󠀖󠀗󠀘󠀕󠀖󠀗󠀘󠀕󠀖󠀗󠀘󠀕󠀖󠀗󠀘󠀕󠀖󠀗󠀘󠀕󠀖󠀗󠀘󠀕󠀖󠀗󠀕at"}
+Mainwords["Dickface"] = {"dickface", "di󠀕󠀖󠀗󠀘󠀕󠀖󠀗󠀘󠀕󠀖󠀗󠀘󠀕󠀖󠀗󠀘󠀕󠀖󠀗󠀘󠀕󠀖󠀗󠀘󠀕󠀖󠀗󠀘󠀕󠀖󠀗c󠀕󠀖󠀗󠀘󠀕󠀖󠀗󠀘󠀕󠀖󠀗󠀘󠀕󠀖󠀗󠀘󠀕󠀖󠀗󠀘󠀕󠀖󠀗󠀘󠀕󠀖󠀗󠀘󠀕󠀖󠀗󠀕kfa󠀕󠀖󠀗󠀘󠀕󠀖󠀗󠀘󠀕󠀖󠀗󠀘󠀕󠀖󠀗󠀘󠀕󠀖󠀗󠀘󠀕󠀖󠀗󠀘󠀕󠀖󠀗󠀘󠀕󠀖󠀗󠀕ce"}
+Mainwords["Bitchass"] = {"bitchass", "bi󠀕󠀖󠀗󠀘󠀕󠀖󠀗󠀘󠀕󠀖󠀗󠀘󠀕󠀖󠀗󠀘󠀕󠀖󠀗󠀘󠀕󠀖󠀗󠀘󠀕󠀖󠀗󠀘󠀕󠀖󠀗󠀕tc󠀕󠀖󠀗󠀘󠀕󠀖󠀗󠀘󠀕󠀖󠀗󠀘󠀕󠀖󠀗󠀘󠀕󠀖󠀗󠀘󠀕󠀖󠀗󠀘󠀕󠀖󠀗󠀘󠀕󠀖󠀗󠀕ha󠀕󠀖󠀗󠀘󠀕󠀖󠀗󠀘󠀕󠀖󠀗󠀘󠀕󠀖󠀗󠀘󠀕󠀖󠀗󠀘󠀕󠀖󠀗󠀘󠀕󠀖󠀗󠀘󠀕󠀖󠀗󠀕ss"}
+Mainwords["Cock master"] = {"cock master", "co󠀕󠀖󠀗󠀘󠀕󠀖󠀗󠀘󠀕󠀖󠀗󠀘󠀕󠀖󠀗󠀘󠀕󠀖󠀗󠀘󠀕󠀖󠀗󠀘󠀕󠀖󠀗󠀘󠀕󠀖󠀗󠀕ck ma󠀕󠀖󠀗󠀘󠀕󠀖󠀗󠀘󠀕󠀖󠀗󠀘󠀕󠀖󠀗󠀘󠀕󠀖󠀗󠀘󠀕󠀖󠀗󠀘󠀕󠀖󠀗󠀘󠀕󠀖󠀗󠀕st󠀕󠀖󠀗󠀘󠀕󠀖󠀗󠀘󠀕󠀖󠀗󠀘󠀕󠀖󠀗󠀘󠀕󠀖󠀗󠀘󠀕󠀖󠀗󠀘󠀕󠀖󠀗󠀘󠀕󠀖󠀗󠀕er"}
+Mainwords["Cuntass"] = {"cuntass", "cu󠀕󠀖󠀗󠀘󠀕󠀖󠀗󠀘󠀕󠀖󠀗󠀘󠀕󠀖󠀗󠀘󠀕󠀖󠀗󠀘󠀕󠀖󠀗󠀘󠀕󠀖󠀗󠀘󠀕󠀖󠀗󠀕nta󠀕󠀖󠀗󠀘󠀕󠀖󠀗󠀘󠀕󠀖󠀗󠀘󠀕󠀖󠀗󠀘󠀕󠀖󠀗󠀘󠀕󠀖󠀗󠀘󠀕󠀖󠀗󠀘󠀕󠀖󠀗󠀕ss"}
+Mainwords["dick fucker"] = {"dick fucker", "di󠀕󠀖󠀗󠀘󠀕󠀖󠀗󠀘󠀕󠀖󠀗󠀘󠀕󠀖󠀗󠀘󠀕󠀖󠀗󠀘󠀕󠀖󠀗󠀘󠀕󠀖󠀗󠀘󠀕󠀖󠀗󠀕ck fu󠀕󠀖󠀗󠀘󠀕󠀖󠀗󠀘󠀕󠀖󠀗󠀘󠀕󠀖󠀗󠀘󠀕󠀖󠀗󠀘󠀕󠀖󠀗󠀘󠀕󠀖󠀗󠀘󠀕󠀖󠀗󠀕ck󠀕󠀖󠀗󠀘󠀕󠀖󠀗󠀘󠀕󠀖󠀗󠀘󠀕󠀖󠀗󠀘󠀕󠀖󠀗󠀘󠀕󠀖󠀗󠀘󠀕󠀖󠀗󠀘󠀕󠀖󠀗󠀕er"}
+for key, value in pairs(Mainwords) do
+    main.Button({
+    Text = Mainwords[key][1],
+    Callback = function()
+       c(Mainwords[key][2])    
+    end
+})
+end
+local slurs = UI.New({
+    Title = "Slurs"
+})
+ local Slurswords = {}
+Slurswords["Nigga Word"] = {"nigga", "ni󠀕󠀖󠀗󠀘󠀕󠀖󠀗󠀘󠀕󠀖󠀗󠀘󠀕󠀖󠀗󠀘󠀕󠀖󠀗󠀘󠀕󠀖󠀗󠀘󠀕󠀖󠀗󠀘󠀕󠀖󠀗󠀕gg󠀕󠀖󠀗󠀘󠀕󠀖󠀗󠀘󠀕󠀖󠀗󠀘󠀕󠀖󠀗󠀘󠀕󠀖󠀗󠀘󠀕󠀖󠀗󠀘󠀕󠀖󠀗󠀘󠀕󠀖󠀗󠀕a"}
+Slurswords["Niggerhead"] = {"niggerhead", "ni󠀕󠀖󠀗󠀘󠀕󠀖󠀗󠀘󠀕󠀖󠀗󠀘󠀕󠀖󠀗󠀘󠀕󠀖󠀗󠀘󠀕󠀖󠀗󠀘󠀕󠀖󠀗󠀘󠀕󠀖󠀗󠀕gg󠀕󠀖󠀗󠀘󠀕󠀖󠀗󠀘󠀕󠀖󠀗󠀘󠀕󠀖󠀗󠀘󠀕󠀖󠀗󠀘󠀕󠀖󠀗󠀘󠀕󠀖󠀗󠀘󠀕󠀖󠀗󠀕erhe󠀕󠀖󠀗󠀘󠀕󠀖󠀗󠀘󠀕󠀖󠀗󠀘󠀕󠀖󠀗󠀘󠀕󠀖󠀗󠀘󠀕󠀖󠀗󠀘󠀕󠀖󠀗󠀘󠀕󠀖󠀗󠀕ad"}
+Slurswords["Behead nigger"] = {"behead nigger", "behead ni󠀕󠀖󠀗󠀘󠀕󠀖󠀗󠀘󠀕󠀖󠀗󠀘󠀕󠀖󠀗󠀘󠀕󠀖󠀗󠀘󠀕󠀖󠀗󠀘󠀕󠀖󠀗󠀘󠀕󠀖󠀗󠀕gg󠀕󠀖󠀗󠀘󠀕󠀖󠀗󠀘󠀕󠀖󠀗󠀘󠀕󠀖󠀗󠀘󠀕󠀖󠀗󠀘󠀕󠀖󠀗󠀘󠀕󠀖󠀗󠀘󠀕󠀖󠀗󠀕er"}
+Slurswords["Nigger"] = {"nigger", "ni󠀕󠀖󠀗󠀘󠀕󠀖󠀗󠀘󠀕󠀖󠀗󠀘󠀕󠀖󠀗󠀘󠀕󠀖󠀗󠀘󠀕󠀖󠀗󠀘󠀕󠀖󠀗󠀘󠀕󠀖󠀗󠀕gger"}
+Slurswords["Dyke"] = {"dyke", "dy󠀕󠀖󠀗󠀘󠀕󠀖󠀗󠀘󠀕󠀖󠀗󠀘󠀕󠀖󠀗󠀘󠀕󠀖󠀗󠀘󠀕󠀖󠀗󠀘󠀕󠀖󠀗󠀘󠀕󠀖󠀗󠀕ke"}
+for key, value in pairs(Slurswords) do
+
+    slurs.Button({
+    Text = Slurswords[key][1],
+    Callback = function()
+       c(Slurswords[key][2])    
+    end
+})
+end
+ local lines = UI.New({
+    Title = "Lines"
+})
+ local Linewords = {}
+Linewords["Slit Your Wrist"] = {"slit your wrist", "slit y󠀕󠀖󠀗󠀘󠀕󠀖󠀗󠀘󠀕󠀖󠀗󠀘󠀕󠀖󠀗󠀘󠀕󠀖󠀗󠀘󠀕󠀖󠀗󠀘󠀕󠀖󠀗󠀘󠀕󠀖󠀗󠀕our w󠀕󠀖󠀗󠀘󠀕󠀖󠀗󠀘󠀕󠀖󠀗󠀘󠀕󠀖󠀗󠀘󠀕󠀖󠀗󠀘󠀕󠀖󠀗󠀘󠀕󠀖󠀗󠀘󠀕󠀖󠀗󠀕rist"}
+Linewords["Come have sex with me"] = {"come have sex with me", "come have s󠀕󠀖󠀗󠀘󠀕󠀖󠀗󠀘󠀕󠀖󠀗󠀘󠀕󠀖󠀗󠀘󠀕󠀖󠀗󠀘󠀕󠀖󠀗󠀘󠀕󠀖󠀗󠀘󠀕󠀖󠀗󠀕ex wi󠀕󠀖󠀗󠀘󠀕󠀖󠀗󠀘󠀕󠀖󠀗󠀘󠀕󠀖󠀗󠀘󠀕󠀖󠀗󠀘󠀕󠀖󠀗󠀘󠀕󠀖󠀗󠀘󠀕󠀖󠀗󠀕th m󠀕󠀖󠀗󠀘󠀕󠀖󠀗󠀘󠀕󠀖󠀗󠀘󠀕󠀖󠀗󠀘󠀕󠀖󠀗󠀘󠀕󠀖󠀗󠀘󠀕󠀖󠀗󠀘󠀕󠀖󠀗󠀕e"}
+Linewords["I hate niggers"] = {"i hate niggers", "i hate ni󠀕󠀖󠀗󠀘󠀕󠀖󠀗󠀘󠀕󠀖󠀗󠀘󠀕󠀖󠀗󠀘󠀕󠀖󠀗󠀘󠀕󠀖󠀗󠀘󠀕󠀖󠀗󠀘󠀕󠀖󠀗󠀕gg󠀕󠀖󠀗󠀘󠀕󠀖󠀗󠀘󠀕󠀖󠀗󠀘󠀕󠀖󠀗󠀘󠀕󠀖󠀗󠀘󠀕󠀖󠀗󠀘󠀕󠀖󠀗󠀘󠀕󠀖󠀗󠀕er󠀕󠀖󠀗󠀘󠀕󠀖󠀗󠀘󠀕󠀖󠀗󠀘󠀕󠀖󠀗󠀘󠀕󠀖󠀗󠀘󠀕󠀖󠀗󠀘󠀕󠀖󠀗󠀘󠀕󠀖󠀗󠀕s"}
+Linewords["Please cum in me"] = {"please cum in me", "please cu󠀕󠀖󠀗󠀘󠀕󠀖󠀗󠀘󠀕󠀖󠀗󠀘󠀕󠀖󠀗󠀘󠀕󠀖󠀗󠀘󠀕󠀖󠀗󠀘󠀕󠀖󠀗󠀘󠀕󠀖󠀗󠀕m i󠀕󠀖󠀗󠀘󠀕󠀖󠀗󠀘󠀕󠀖󠀗󠀘󠀕󠀖󠀗󠀘󠀕󠀖󠀗󠀘󠀕󠀖󠀗󠀘󠀕󠀖󠀗󠀘󠀕󠀖󠀗󠀕n m󠀕󠀖󠀗󠀘󠀕󠀖󠀗󠀘󠀕󠀖󠀗󠀘󠀕󠀖󠀗󠀘󠀕󠀖󠀗󠀘󠀕󠀖󠀗󠀘󠀕󠀖󠀗󠀘󠀕󠀖󠀗󠀕e"}
+Linewords["Show me your cock"] = {"show me your cock", "show me ur c󠀕󠀖󠀗󠀘󠀕󠀖󠀗󠀘󠀕󠀖󠀗󠀘󠀕󠀖󠀗󠀘󠀕󠀖󠀗󠀘󠀕󠀖󠀗󠀘󠀕󠀖󠀗󠀘󠀕󠀖󠀗󠀕oc󠀕󠀖󠀗󠀘󠀕󠀖󠀗󠀘󠀕󠀖󠀗󠀘󠀕󠀖󠀗󠀘󠀕󠀖󠀗󠀘󠀕󠀖󠀗󠀘󠀕󠀖󠀗󠀘󠀕󠀖󠀗󠀕k"}
+Linewords["Your mom is sexy"] = {"your mom is sexy", "your mom is s󠀕󠀖󠀗󠀘󠀕󠀖󠀗󠀘󠀕󠀖󠀗󠀘󠀕󠀖󠀗󠀘󠀕󠀖󠀗󠀘󠀕󠀖󠀗󠀘󠀕󠀖󠀗󠀘󠀕󠀖󠀗󠀕ex󠀕󠀖󠀗󠀘󠀕󠀖󠀗󠀘󠀕󠀖󠀗󠀘󠀕󠀖󠀗󠀘󠀕󠀖󠀗󠀘󠀕󠀖󠀗󠀘󠀕󠀖󠀗󠀘󠀕󠀖󠀗󠀕y"}
+Linewords["Can you fucking not"] = {"can you fucking not", "can you fu󠀕󠀖󠀗󠀘󠀕󠀖󠀗󠀘󠀕󠀖󠀗󠀘󠀕󠀖󠀗󠀘󠀕󠀖󠀗󠀘󠀕󠀖󠀗󠀘󠀕󠀖󠀗󠀘󠀕󠀖󠀗c󠀕󠀖󠀗󠀘󠀕󠀖󠀗󠀘󠀕󠀖󠀗󠀘󠀕󠀖󠀗󠀘󠀕󠀖󠀗󠀘󠀕󠀖󠀗󠀘󠀕󠀖󠀗󠀘󠀕󠀖󠀗󠀕kin󠀕󠀖󠀗󠀘󠀕󠀖󠀗󠀘󠀕󠀖󠀗󠀘󠀕󠀖󠀗󠀘󠀕󠀖󠀗󠀘󠀕󠀖󠀗󠀘󠀕󠀖󠀗󠀘󠀕󠀖󠀗󠀕g not"}
+for key, value in pairs(Linewords) do
+
+    lines.Button({
+    Text = Linewords[key][1],
+    Callback = function()
+       c(Linewords[key][2])    
+    end
+})
+end
